@@ -1,0 +1,19 @@
+{
+    "name": "woann/login",
+    "description": "Common third-party login functions",
+    "type": "sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "woann",
+            "email": "304550409@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Woann\\": "src/"
+        }
+    }
+}
