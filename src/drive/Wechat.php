@@ -9,18 +9,25 @@
 // | Author: woann <www.woann.cn>
 // +----------------------------------------------------------------------
 
+namespace Woann\Login\Drive;
 
 class Wechat
 {
+    private $config;
+    public function __construct($config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * @Author woann <www.woann.cn>
      * @param $code
      * @return array
      * @des 获取用户信息
      */
-    public function getUserInfoByWx($code)
+    public function login($code)
     {
-        $app = config('wechat.app');//获取app_id,secret
+        $app = $this->config;//获取app_id,secret
         //获取认证信息
         $auth_url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$app['appid']."&secret=".$app['secret']."&code=".$code."&grant_type=authorization_code";
         $auth_res = httpRequest($auth_url);
